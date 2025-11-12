@@ -1,104 +1,86 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Trophy, Award, Star, Medal } from "lucide-react";
+import { Award, Trophy, Medal } from "lucide-react";
 
 const Awards = () => {
   const awards = [
     {
-      title: "Member",
-      organization: "International Federation of Inventors' Associations (IFIA)",
-      country: "Global",
-      flag: "🌍",
+      type: "Membership",
+      title: "Proud Member of the International Federation of Inventors' Associations (IFIA)",
       icon: Award,
-      color: "from-yellow-500 to-yellow-600"
+      flagEmoji: "🌐",
+      countryCode: "global"
     },
     {
-      title: "Gold Medal",
-      organization: "European Inventors Federation",
-      country: "Europe",
-      flag: "🇪🇺",
+      type: "Gold Medal",
+      title: "European Inventors Federation",
+      country: "European Union",
       icon: Medal,
-      color: "from-yellow-500 to-amber-600"
+      flagEmoji: "🇪🇺",
+      countryCode: "eu"
     },
     {
-      title: "Gold Medal",
-      organization: "Teknofest World Invention Championships",
-      country: "Turkey",
-      flag: "🇹🇷",
+      type: "Gold & Silver Medals",
+      title: "Teknofest World Invention Championships",
+      description: "The world's largest invention fair",
       icon: Trophy,
-      color: "from-yellow-500 to-amber-600"
+      flagEmoji: "🌍",
+      countryCode: "world"
     },
     {
-      title: "Silver Medal",
-      organization: "Teknofest World Invention Championships",
-      country: "Turkey",
-      flag: "🇹🇷",
-      icon: Medal,
-      color: "from-gray-400 to-gray-500"
-    },
-    {
-      title: "Gold Medal",
-      organization: "Global Invention Competition",
+      type: "Gold Medal",
+      title: "Global Invention Competition",
       country: "Switzerland",
-      flag: "🇨🇭",
+      icon: Medal,
+      flagEmoji: "🇨🇭",
+      countryCode: "ch"
+    },
+    {
+      type: "Gold & Silver Medals",
+      title: "World Championships",
+      country: "Turkey",
       icon: Trophy,
-      color: "from-yellow-500 to-amber-600"
+      flagEmoji: "🇹🇷",
+      countryCode: "tr"
     },
     {
-      title: "Gold Medal",
-      organization: "World Championships",
-      country: "Turkey",
-      flag: "🇹🇷",
-      icon: Medal,
-      color: "from-yellow-500 to-amber-600"
-    },
-    {
-      title: "Silver Medal",
-      organization: "World Championships",
-      country: "Turkey",
-      flag: "🇹🇷",
-      icon: Medal,
-      color: "from-gray-400 to-gray-500"
-    },
-    {
-      title: "Silver Medal",
-      organization: "World Championships",
+      type: "Silver Medal",
+      title: "World Championships",
       country: "United Arab Emirates",
-      flag: "🇦🇪",
       icon: Medal,
-      color: "from-gray-400 to-gray-500"
+      flagEmoji: "🇦🇪",
+      countryCode: "ae"
     },
     {
-      title: "Special Award",
-      organization: "England Invention Competition",
+      type: "Special Award",
+      title: "England Invention Competition",
       country: "England",
-      flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      icon: Star,
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      title: "Special Award",
-      organization: "World Invention Intellectual Property Associations (WIIPA)",
-      country: "Global",
-      flag: "🌍",
       icon: Award,
-      color: "from-purple-500 to-purple-600"
+      flagEmoji: "🇬🇧",
+      countryCode: "gb"
     },
     {
-      title: "Special Award",
-      organization: "European Union of Inventors Association",
-      country: "Europe",
-      flag: "🇪🇺",
-      icon: Star,
-      color: "from-blue-500 to-indigo-600"
+      type: "Special Award",
+      title: "World Invention Intellectual Property Associations (WIIPA)",
+      icon: Award,
+      flagEmoji: "🌐",
+      countryCode: "global"
     },
     {
-      title: "Special Award",
-      organization: "France Innovation Competition",
+      type: "Special Award",
+      title: "European Union of Inventors Association",
+      country: "European Union",
+      icon: Award,
+      flagEmoji: "🇪🇺",
+      countryCode: "eu"
+    },
+    {
+      type: "Special Award",
+      title: "France",
       country: "France",
-      flag: "🇫🇷",
       icon: Award,
-      color: "from-indigo-500 to-indigo-600"
+      flagEmoji: "🇫🇷",
+      countryCode: "fr"
     }
   ];
 
@@ -109,51 +91,65 @@ const Awards = () => {
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           {/* Header */}
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <Trophy className="mx-auto mb-6 text-primary" size={64} />
+          <div className="text-center max-w-4xl mx-auto mb-16 animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Awards & <span className="text-gradient">Achievements</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Recognized globally for innovation excellence and groundbreaking inventions
+            <p className="text-xl text-muted-foreground mb-4">
+              Global recognition for scientific excellence and innovation
             </p>
+            <div className="inline-block bg-primary/10 border border-primary/20 rounded-full px-6 py-3">
+              <p className="text-sm text-muted-foreground">
+                🏆 International Hall of Fame
+              </p>
+            </div>
           </div>
 
           {/* Awards Grid */}
-          <section className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {awards.map((award, index) => (
-                <div 
-                  key={index} 
-                  className="bg-card border border-border rounded-2xl p-6 hover-lift hover:border-primary/30 transition-all"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${award.color} rounded-xl flex items-center justify-center`}>
-                      <award.icon className="text-white" size={32} />
-                    </div>
-                    <span className="text-4xl">{award.flag}</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{award.title}</h3>
-                  <p className="text-sm font-medium text-primary mb-2">{award.country}</p>
-                  <p className="text-sm text-muted-foreground">{award.organization}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
+            {awards.map((award, index) => (
+              <div
+                key={index}
+                className="relative bg-card backdrop-blur-sm border border-border rounded-2xl p-6 hover-lift group overflow-hidden"
+              >
+                {/* Flag Background */}
+                <div className="absolute top-0 right-0 text-[120px] opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
+                  {award.flagEmoji}
                 </div>
-              ))}
-            </div>
-          </section>
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-4">
+                    <award.icon className="text-primary group-hover:scale-110 transition-transform" size={32} />
+                    <span className="text-3xl">{award.flagEmoji}</span>
+                  </div>
+                  <div className="inline-block bg-gradient-primary/20 rounded-full px-3 py-1 mb-3">
+                    <span className="text-xs font-semibold text-primary">{award.type}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{award.title}</h3>
+                  {award.description && (
+                    <p className="text-sm text-muted-foreground mb-2">{award.description}</p>
+                  )}
+                  {award.country && (
+                    <p className="text-sm text-muted-foreground flex items-center gap-2">
+                      <span className="text-lg">{award.flagEmoji}</span>
+                      {award.country}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
 
-          {/* Footer Note */}
-          <section className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-card via-card to-primary/5 border border-primary/20 rounded-2xl p-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">
-                Excellence Through Innovation
-              </h2>
+          {/* Caption */}
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-card border border-primary/20 rounded-2xl p-8 hover-lift">
               <p className="text-lg text-muted-foreground">
-                The medals and awards we have earned represent our inventions and innovative products — 
-                demonstrating our commitment to scientific excellence and our dedication to advancing 
-                artificial intelligence for the benefit of humanity.
+                The medals and awards we have earned are for our <span className="text-primary font-semibold">inventions and innovative products</span> — 
+                representing our commitment to scientific excellence and global collaboration.
               </p>
             </div>
-          </section>
+          </div>
         </div>
       </main>
 
