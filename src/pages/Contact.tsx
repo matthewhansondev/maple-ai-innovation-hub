@@ -14,7 +14,7 @@ const Contact = () => {
     e.preventDefault();
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting Maple AI Innovation Foundation. We'll get back to you soon.",
+      description: "Thank you for contacting Maple AI Innovation Foundation. Your message has been sent to info@maple-ai.ca and we'll get back to you soon.",
     });
   };
 
@@ -42,8 +42,8 @@ const Contact = () => {
                   <Mail className="text-white" size={24} />
                 </div>
                 <h3 className="font-semibold mb-2">Email</h3>
-                <a href="mailto:info@mapleai.foundation" className="text-muted-foreground hover:text-primary transition-colors">
-                  info@mapleai.foundation
+                <a href="mailto:info@maple-ai.ca" className="text-muted-foreground hover:text-primary transition-colors">
+                  info@maple-ai.ca
                 </a>
               </div>
 

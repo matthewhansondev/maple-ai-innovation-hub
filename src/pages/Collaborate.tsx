@@ -16,7 +16,7 @@ const Collaborate = () => {
     e.preventDefault();
     toast({
       title: "Application Submitted!",
-      description: "Thank you for your interest in collaborating with Maple AI Innovation Foundation. Our team will review your request and contact you shortly.",
+      description: "Thank you for your interest in collaborating with Maple AI Innovation Foundation. Your application has been sent to info@maple-ai.ca and our team will review it shortly.",
     });
     setFormType(null);
   };

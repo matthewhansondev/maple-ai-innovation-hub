@@ -45,20 +45,18 @@ const Board = () => {
             </div>
           </div>
 
-          {/* Board Member Placeholder */}
+          {/* Board Members Coming Soon */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Our Distinguished Members</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl p-6 hover-lift">
-                  <div className="w-32 h-32 bg-gradient-primary rounded-xl mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-center mb-2">Board Member {i}</h3>
-                  <p className="text-sm text-primary text-center mb-2">AI Research Specialist</p>
-                  <p className="text-sm text-muted-foreground text-center">
-                    Distinguished expert in artificial intelligence and machine learning
-                  </p>
+            <div className="max-w-3xl mx-auto">
+              <div className="bg-card border border-border rounded-2xl p-12 text-center">
+                <div className="w-20 h-20 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <UserCheck className="text-white" size={40} />
                 </div>
-              ))}
+                <p className="text-xl text-muted-foreground">
+                  The list of members will be announced soon.
+                </p>
+              </div>
             </div>
           </section>
 
