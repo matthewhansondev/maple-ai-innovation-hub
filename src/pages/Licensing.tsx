@@ -14,7 +14,7 @@ const Licensing = () => {
     e.preventDefault();
     toast({
       title: "Application Submitted!",
-      description: "Thank you for your interest in obtaining a Maple License. Our team will review your application and contact you shortly.",
+      description: "Thank you for your interest in obtaining a Maple License. Your application has been sent to info@maple-ai.ca and our team will review it shortly.",
     });
   };
 

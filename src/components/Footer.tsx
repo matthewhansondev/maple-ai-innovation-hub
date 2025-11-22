@@ -65,8 +65,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail size={16} className="flex-shrink-0" />
-                <a href="mailto:info@mapleai.foundation" className="hover:text-primary transition-colors">
-                  info@mapleai.foundation
+                <a href="mailto:info@maple-ai.ca" className="hover:text-primary transition-colors">
+                  info@maple-ai.ca
                 </a>
               </li>
             </ul>
